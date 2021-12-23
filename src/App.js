@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Pomodoro from "./pomodoro/Pomodoro";
+import ProgressBar from "./pomodoro/ProgressBar";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <h1>Pomodoro Timer</h1>
       </header>
       <div className="container">
-        <Pomodoro />
+        <Pomodoro ProgressBar={ProgressBar} />
       </div>
     </div>
   );
