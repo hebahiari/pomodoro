@@ -15,7 +15,6 @@ function nextTick(prevState) {
 function nextSession(focusDuration, breakDuration) {
 
   return (currentSession) => {
-    console.log(currentSession);
     if (currentSession.label === "Focusing") {
       return {
         label: "On Break",
