@@ -19,7 +19,8 @@ function AdjustDurations({
         event.target.getAttribute("data-testid") === "decrease-focus" ||
         event.target.parentNode.getAttribute("data-testid") === "decrease-focus"
       ) {
-        setFocusDuration(Math.max(5, focusDuration - 5));
+      // limited focus duration to be more than break duration
+        setFocusDuration(Math.max(Math.max(5, breakDuration), focusDuration - 5));
       } else if (
         event.target.getAttribute("data-testid") === "decrease-break" ||
         event.target.parentNode.getAttribute("data-testid") === "decrease-break"
@@ -29,7 +30,8 @@ function AdjustDurations({
         event.target.getAttribute("data-testid") === "increase-break" ||
         event.target.parentNode.getAttribute("data-testid") === "increase-break"
       ) {
-        setBreakDuration(Math.min(15, breakDuration + 1));
+        // limited break duration to be less than focus duration
+        setBreakDuration(Math.min(Math.min(15, focusDuration), breakDuration + 1));
       }
     }
   };

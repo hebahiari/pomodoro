@@ -17,8 +17,7 @@ function ProgressBar({ session, focusDuration, breakDuration }) {
         ((breakDuration * 60 - session?.timeRemaining) / (breakDuration * 60)) *
         100
       );
-    } else {
-    }
+      }
   }
 
   if (session) {
